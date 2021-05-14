@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "LineNumbers": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\Dell\\source\\repos\\Kernel-Simulator\\Kernel Simulator\"",
+      "remoteDebugEnabled": false
+    }
+  }
+}
