@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <RootNamespace>LineNumbers</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <Authors>EoflaOE</Authors>
     <Company>EoflaOE</Company>
     <Description>Gets total line numbers from Visual Basic projects</Description>
