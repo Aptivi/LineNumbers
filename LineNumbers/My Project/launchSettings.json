@@ -2,7 +2,7 @@
   "profiles": {
     "LineNumbers": {
       "commandName": "Project",
-      "commandLineArgs": "\"C:\\Users\\Dell\\source\\repos\\Kernel-Simulator\\KSJsonifyLocales\"",
+      "commandLineArgs": "\"E:\\Misc\\New\\source\\repos\\Kernel-Simulator\\Kernel Simulator.sln\"",
       "remoteDebugEnabled": false
     }
   }

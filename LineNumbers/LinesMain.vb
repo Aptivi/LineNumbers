@@ -1,58 +1,70 @@
-
-'    Line Numbers  Copyright (C) 2018-2020  EoflaOE
 '
-'    This file is part of Line Numbers
+' MIT License
 '
-'    Line Numbers is free software: you can redistribute it and/or modify
-'    it under the terms of the GNU General Public License as published by
-'    the Free Software Foundation, either version 3 of the License, or
-'    (at your option) any later version.
+' Copyright (c) 2021 EoflaOE and its companies
 '
-'    Line Numbers is distributed in the hope that it will be useful,
-'    but WITHOUT ANY WARRANTY; without even the implied warranty of
-'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-'    GNU General Public License for more details.
-'
-'    You should have received a copy of the GNU General Public License
-'    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+' Permission is hereby granted, free of charge, to any person obtaining a copy
+' of this software and associated documentation files (the "Software"), to deal
+' in the Software without restriction, including without limitation the rights
+' to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+' copies of the Software, and to permit persons to whom the Software is
+' furnished to do so, subject to the following conditions:
+' 
+' The above copyright notice and this permission notice shall be included in all
+' copies or substantial portions of the Software.
+' 
+' THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+' IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+' FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+' AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+' LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+' OUT OF OR IN CONNECTION WITH THE SOFTWARE Or THE USE OR OTHER DEALINGS IN THE
+' SOFTWARE.
+' 
 
 Imports System.IO
+Imports LineNumbers.Core
+Imports Microsoft.CodeAnalysis
+Imports Microsoft.CodeAnalysis.MSBuild
 
 Module LinesMain
-    ReadOnly vbNewLine As String = Environment.NewLine
+
     Sub Main(args As String())
-        Dim ToParse As New List(Of String)
         Dim Total As Long
-        If Directory.Exists(args(0)) And CheckForProject(args(0)) Then
-            Dim Files = Directory.EnumerateFileSystemEntries(args(0), "", SearchOption.AllDirectories)
-            For Each File As String In Files
-                If File.EndsWith(".vb") And Not File.Contains("My Project\") And Not File.Contains("obj\") Then
-                    Debug.WriteLine(File)
-                    ToParse.Add(File)
-                End If
+
+        'Check to see if solution exists
+        Dim Workspace As MSBuildWorkspace = MSBuildWorkspace.Create()
+        If File.Exists(args(0)) Then
+            Dim Projects As List(Of Project) = ReturnProjects(args(0), Workspace)
+
+            'Enumerate through each project
+            For Each Project As Project In Projects
+                Dim ProjectTotal As Long
+                Dim CodeFiles As List(Of String) = ReturnCodeFiles(Project)
+
+                'Enumerate through each code file
+                For Each CodeFile As String In CodeFiles
+                    Debug.WriteLine(CodeFile)
+                    Dim FileLines() As String = File.ReadAllLines(CodeFile)
+                    Dim FileLinesLength As Long = FileLines.Length
+                    Total += FileLinesLength
+                    ProjectTotal += FileLinesLength
+                    Debug.WriteLine(FileLinesLength.ToString + ", " + Total.ToString)
+                    Console.WriteLine("File {0}: {1} lines", Path.GetFileName(CodeFile), FileLinesLength)
+                Next
+
+                'Total for solution
+                Console.WriteLine(Environment.NewLine + "Total for project {0}: {1} lines" + Environment.NewLine, Project.Name, ProjectTotal)
+                ProjectTotal = 0
             Next
-            ToParse.Sort()
-            For Each File As String In ToParse
-                Dim FileLines() As String = IO.File.ReadAllLines(File)
-                Dim FileLinesLength As Long = FileLines.Length
-                Total += FileLinesLength
-                Debug.WriteLine(FileLinesLength.ToString + ", " + Total.ToString)
-                Console.WriteLine("File {0}: {1} lines", Path.GetFileName(File), FileLinesLength)
-            Next
-            Console.WriteLine(vbNewLine + "Total: {0} lines", Total)
+
+            'Return the total
+            Console.WriteLine(Environment.NewLine + "Total: {0} lines", Total)
             Console.ReadKey()
         Else
-            Console.WriteLine("Directory not found.")
+            Console.WriteLine("Solution not found.")
             Environment.Exit(1)
         End If
     End Sub
-    Function CheckForProject(ByVal Dir As String) As Boolean
-        Dim Files = Directory.EnumerateFiles(Dir)
-        For Each File As String In Files
-            If File.Contains(".vbproj") Then
-                Return True
-            End If
-        Next
-        Return False
-    End Function
+
 End Module
