@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "LineNumbers": {
-      "commandName": "Project",
-      "commandLineArgs": "\"E:\\Misc\\New\\source\\repos\\Kernel-Simulator\\Kernel Simulator.sln\"",
-      "remoteDebugEnabled": false
-    }
-  }
-}
