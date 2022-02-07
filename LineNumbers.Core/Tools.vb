@@ -42,6 +42,14 @@ Public Module Tools
     End Function
 
     ''' <summary>
+    ''' Get the projects in the solution
+    ''' </summary>
+    ''' <param name="Solution">The solution</param>
+    Function ReturnProjects(Solution As Solution) As List(Of Project)
+        Return Solution.Projects.ToList
+    End Function
+
+    ''' <summary>
     ''' Returns the code files that are in the project
     ''' </summary>
     ''' <param name="ProjectSolution">The project in solution</param>

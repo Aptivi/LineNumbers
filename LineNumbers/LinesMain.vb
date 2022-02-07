@@ -24,45 +24,33 @@
 
 Imports System.IO
 Imports LineNumbers.Core
-Imports Microsoft.CodeAnalysis
-Imports Microsoft.CodeAnalysis.MSBuild
 
 Module LinesMain
 
     Sub Main(args As String())
-        Dim Total As Long
+        If args.Length > 0 Then
+            'Check to see if solution exists
+            If File.Exists(args(0)) Then
+                Dim LinesInfo As New LinesInfo(args(0))
+                Dim LineNumbers As Dictionary(Of String, Long) = LinesInfo.LineNumbersByProject
 
-        'Check to see if solution exists
-        Dim Workspace As MSBuildWorkspace = MSBuildWorkspace.Create()
-        If File.Exists(args(0)) Then
-            Dim Projects As List(Of Project) = ReturnProjects(args(0), Workspace)
-
-            'Enumerate through each project
-            For Each Project As Project In Projects
-                Dim ProjectTotal As Long
-                Dim CodeFiles As List(Of String) = ReturnCodeFiles(Project)
-
-                'Enumerate through each code file
-                For Each CodeFile As String In CodeFiles
-                    Debug.WriteLine(CodeFile)
-                    Dim FileLines() As String = File.ReadAllLines(CodeFile)
-                    Dim FileLinesLength As Long = FileLines.Length
-                    Total += FileLinesLength
-                    ProjectTotal += FileLinesLength
-                    Debug.WriteLine(FileLinesLength.ToString + ", " + Total.ToString)
-                    Console.WriteLine("File {0}: {1} lines", Path.GetFileName(CodeFile), FileLinesLength)
+                'Enumerate through each project
+                For Each ProjectName As String In LineNumbers.Keys
+                    Dim CodeFileLines As Dictionary(Of String, Long) = LinesInfo.LineNumbersByCodeFilesByProject(ProjectName)
+                    For Each FileName As String In CodeFileLines.Keys
+                        Console.WriteLine("File {0}: {1} lines", Path.GetFileName(FileName), CodeFileLines(FileName))
+                    Next
+                    Console.WriteLine(Environment.NewLine + "Total for project {0}: {1} lines" + Environment.NewLine, ProjectName, LineNumbers(ProjectName))
                 Next
 
-                'Total for solution
-                Console.WriteLine(Environment.NewLine + "Total for project {0}: {1} lines" + Environment.NewLine, Project.Name, ProjectTotal)
-                ProjectTotal = 0
-            Next
-
-            'Return the total
-            Console.WriteLine(Environment.NewLine + "Total: {0} lines", Total)
-            Console.ReadKey()
+                'Return the total
+                Console.WriteLine("Total: {0} lines", LinesInfo.SolutionLineNumber)
+            Else
+                Console.WriteLine("Solution not found.")
+                Environment.Exit(1)
+            End If
         Else
-            Console.WriteLine("Solution not found.")
+            Console.WriteLine("Specify path to solution.")
             Environment.Exit(1)
         End If
     End Sub
