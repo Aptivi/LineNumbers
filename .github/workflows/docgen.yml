@@ -3,12 +3,10 @@ name: API Documentation
 on:
   push:
     branches:
-      - master
-      - servicing
+      - main
   pull_request:
     branches:
-      - master
-      - servicing
+      - main
 
 jobs:
   build:
@@ -22,7 +20,7 @@ jobs:
         with:
           args: DocGen/docfx.json
       - name: Saving changes to gh-pages
-        if: ${{ github.ref == 'refs/heads/master'}}
+        if: ${{ github.ref == 'refs/heads/main'}}
         uses: peaceiris/actions-gh-pages@v3
         with:
           commit_message: "Updated documentation to reflect latest changes"
