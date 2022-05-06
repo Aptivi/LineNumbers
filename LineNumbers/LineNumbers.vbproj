@@ -9,6 +9,10 @@
     <Description>Gets total line numbers from Visual Basic projects</Description>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.1</Version>
+    <PackageIcon>OfficialAppIcon-LineNumbers-512.png</PackageIcon>
+    <PackageIconUrl />
+    <ApplicationIcon>OfficialAppIcon-LineNumbers.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -23,6 +27,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LineNumbers.Core\LineNumbers.Core.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LineNumbers.Core\OfficialAppIcon-LineNumbers-512.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
