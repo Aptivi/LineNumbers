@@ -16,7 +16,7 @@
     <Description>Gets the line numbers of a solution file</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>OfficialAppIcon-LineNumbers-512.png</PackageIcon>
-    <PackageIconUrl />
+    <PackageVersion>0.1.0.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
