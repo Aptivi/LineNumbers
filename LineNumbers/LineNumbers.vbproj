@@ -6,7 +6,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Authors>EoflaOE</Authors>
     <Company>EoflaOE</Company>
-    <Description>Gets total line numbers from Visual Basic projects</Description>
+    <Description>Gets total line numbers from Visual Basic and C# projects</Description>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>1.0.1</Version>

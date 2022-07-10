@@ -5,7 +5,7 @@
     <TargetFrameworks>net6.0;net48</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>0.1.0.1</Version>
+    <Version>0.99.0</Version>
     <Authors>EoflaOE</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright (c) 2021 - 2022 EoflaOE and its companies.</Copyright>
