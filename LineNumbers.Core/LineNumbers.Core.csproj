@@ -6,17 +6,17 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>0.99.0</Version>
-    <Authors>EoflaOE</Authors>
+    <Authors>Aptivi</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Copyright>Copyright (c) 2021 - 2022 EoflaOE and its companies.</Copyright>
-    <PackageProjectUrl>https://github.com/EoflaOE/LineNumbers</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/EoflaOE/LineNumbers</RepositoryUrl>
+    <Copyright>Copyright (c) 2021 - 2022 Aptivi.</Copyright>
+    <PackageProjectUrl>https://github.com/Aptivi/LineNumbers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Aptivi/LineNumbers</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>line;numbers;vb.net;c#;parser</PackageTags>
     <Description>Gets the line numbers of a solution file</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>OfficialAppIcon-LineNumbers-512.png</PackageIcon>
-    <PackageVersion>0.1.0.1</PackageVersion>
+    <PackageVersion>0.99.0</PackageVersion>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>

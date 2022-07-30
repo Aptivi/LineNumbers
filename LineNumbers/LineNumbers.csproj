@@ -4,8 +4,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>LineNumbers</RootNamespace>
     <TargetFramework>net6.0</TargetFramework>
-    <Authors>EoflaOE</Authors>
-    <Company>EoflaOE</Company>
+    <Authors>Aptivi</Authors>
+    <Company>Aptivi</Company>
     <Description>Gets total line numbers from Visual Basic and C# projects</Description>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
