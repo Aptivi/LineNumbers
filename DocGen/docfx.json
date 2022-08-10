@@ -3,7 +3,7 @@
         {
             "src": [
                 {
-                    "files": [ "LineNumbers.Core/**.vbproj" ],
+                    "files": [ "LineNumbers.Core/**.csproj" ],
                     "src": ".."
                 }
             ],
