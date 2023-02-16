@@ -34,47 +34,47 @@ namespace LineNumbers.Core
     {
 
         /// <summary>
-    /// The line numbers by project
-    /// </summary>
+        /// The line numbers by project
+        /// </summary>
         public Dictionary<string, long> LineNumbersByProject { get; private set; }
 
         /// <summary>
-    /// The line number of the whole solution
-    /// </summary>
+        /// The line number of the whole solution
+        /// </summary>
         public long SolutionLineNumber { get; private set; }
 
         /// <summary>
-    /// Paths to the individual code files
-    /// </summary>
+        /// Paths to the individual code files
+        /// </summary>
         public List<string> CodeFiles { get; private set; }
 
         /// <summary>
-    /// Paths to the individual code files by project
-    /// </summary>
+        /// Paths to the individual code files by project
+        /// </summary>
         public Dictionary<string, List<string>> CodeFilesByProject { get; private set; }
 
         /// <summary>
-    /// Line numbers of individual code files
-    /// </summary>
+        /// Line numbers of individual code files
+        /// </summary>
         public Dictionary<string, long> LineNumbersByCodeFiles { get; private set; }
 
         /// <summary>
-    /// Line numbers of individual code files by project
-    /// </summary>
+        /// Line numbers of individual code files by project
+        /// </summary>
         public Dictionary<string, Dictionary<string, long>> LineNumbersByCodeFilesByProject { get; private set; }
 
         /// <summary>
-    /// Creates a new lines information instance from the Visual Studio solution
-    /// </summary>
-    /// <param name="SolutionPath">Path to the Visual Studio solution</param>
+        /// Creates a new lines information instance from the Visual Studio solution
+        /// </summary>
+        /// <param name="SolutionPath">Path to the Visual Studio solution</param>
         public LinesInfo(string SolutionPath) : this(MSBuildWorkspace.Create().OpenSolutionAsync(SolutionPath).Result)
         {
         }
 
         /// <summary>
-    /// Creates a new lines information instance from the Visual Studio solution
-    /// </summary>
-    /// <param name="Solution">The Visual Studio solution</param>
+        /// Creates a new lines information instance from the Visual Studio solution
+        /// </summary>
+        /// <param name="Solution">The Visual Studio solution</param>
         public LinesInfo(Solution Solution)
         {
             var Projects = Tools.ReturnProjects(Solution);

@@ -36,9 +36,9 @@ namespace LineNumbers.Core
     {
 
         /// <summary>
-    /// Get the projects in the solution
-    /// </summary>
-    /// <param name="Solution">The solution file name</param>
+        /// Get the projects in the solution
+        /// </summary>
+        /// <param name="Solution">The solution file name</param>
         public static List<Project> ReturnProjects(string Solution, MSBuildWorkspace Workspace)
         {
             if (File.Exists(Solution))
@@ -53,18 +53,18 @@ namespace LineNumbers.Core
         }
 
         /// <summary>
-    /// Get the projects in the solution
-    /// </summary>
-    /// <param name="Solution">The solution</param>
+        /// Get the projects in the solution
+        /// </summary>
+        /// <param name="Solution">The solution</param>
         public static List<Project> ReturnProjects(Solution Solution)
         {
             return Solution.Projects.ToList();
         }
 
         /// <summary>
-    /// Returns the code files that are in the project
-    /// </summary>
-    /// <param name="ProjectSolution">The project in solution</param>
+        /// Returns the code files that are in the project
+        /// </summary>
+        /// <param name="ProjectSolution">The project in solution</param>
         public static List<string> ReturnCodeFiles(Project ProjectSolution)
         {
             if (File.Exists(ProjectSolution.FilePath) & ProjectSolution.SupportsCompilation)
