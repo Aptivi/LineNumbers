@@ -13,25 +13,34 @@ references:
   commentId: T:LineNumbers.Core.LinesInfo
   fullName: LineNumbers.Core.LinesInfo
   nameWithType: LinesInfo
-- uid: LineNumbers.Core.LinesInfo.#ctor(Solution)
+- uid: LineNumbers.Core.LinesInfo.#ctor(Microsoft.CodeAnalysis.Solution)
   name: LinesInfo(Solution)
-  href: api/LineNumbers.Core.LinesInfo.html#LineNumbers_Core_LinesInfo__ctor_Solution_
-  commentId: M:LineNumbers.Core.LinesInfo.#ctor(Solution)
-  fullName: LineNumbers.Core.LinesInfo.LinesInfo(Solution)
+  href: api/LineNumbers.Core.LinesInfo.html#LineNumbers_Core_LinesInfo__ctor_Microsoft_CodeAnalysis_Solution_
+  commentId: M:LineNumbers.Core.LinesInfo.#ctor(Microsoft.CodeAnalysis.Solution)
+  name.vb: New(Solution)
+  fullName: LineNumbers.Core.LinesInfo.LinesInfo(Microsoft.CodeAnalysis.Solution)
+  fullName.vb: LineNumbers.Core.LinesInfo.New(Microsoft.CodeAnalysis.Solution)
   nameWithType: LinesInfo.LinesInfo(Solution)
+  nameWithType.vb: LinesInfo.New(Solution)
 - uid: LineNumbers.Core.LinesInfo.#ctor(System.String)
-  name: LinesInfo(String)
+  name: LinesInfo(string)
   href: api/LineNumbers.Core.LinesInfo.html#LineNumbers_Core_LinesInfo__ctor_System_String_
   commentId: M:LineNumbers.Core.LinesInfo.#ctor(System.String)
-  fullName: LineNumbers.Core.LinesInfo.LinesInfo(System.String)
-  nameWithType: LinesInfo.LinesInfo(String)
+  name.vb: New(String)
+  fullName: LineNumbers.Core.LinesInfo.LinesInfo(string)
+  fullName.vb: LineNumbers.Core.LinesInfo.New(String)
+  nameWithType: LinesInfo.LinesInfo(string)
+  nameWithType.vb: LinesInfo.New(String)
 - uid: LineNumbers.Core.LinesInfo.#ctor*
   name: LinesInfo
   href: api/LineNumbers.Core.LinesInfo.html#LineNumbers_Core_LinesInfo__ctor_
   commentId: Overload:LineNumbers.Core.LinesInfo.#ctor
   isSpec: "True"
+  name.vb: New
   fullName: LineNumbers.Core.LinesInfo.LinesInfo
+  fullName.vb: LineNumbers.Core.LinesInfo.New
   nameWithType: LinesInfo.LinesInfo
+  nameWithType.vb: LinesInfo.New
 - uid: LineNumbers.Core.LinesInfo.CodeFiles
   name: CodeFiles
   href: api/LineNumbers.Core.LinesInfo.html#LineNumbers_Core_LinesInfo_CodeFiles
@@ -116,11 +125,11 @@ references:
   commentId: T:LineNumbers.Core.Tools
   fullName: LineNumbers.Core.Tools
   nameWithType: Tools
-- uid: LineNumbers.Core.Tools.ReturnCodeFiles(Project)
+- uid: LineNumbers.Core.Tools.ReturnCodeFiles(Microsoft.CodeAnalysis.Project)
   name: ReturnCodeFiles(Project)
-  href: api/LineNumbers.Core.Tools.html#LineNumbers_Core_Tools_ReturnCodeFiles_Project_
-  commentId: M:LineNumbers.Core.Tools.ReturnCodeFiles(Project)
-  fullName: LineNumbers.Core.Tools.ReturnCodeFiles(Project)
+  href: api/LineNumbers.Core.Tools.html#LineNumbers_Core_Tools_ReturnCodeFiles_Microsoft_CodeAnalysis_Project_
+  commentId: M:LineNumbers.Core.Tools.ReturnCodeFiles(Microsoft.CodeAnalysis.Project)
+  fullName: LineNumbers.Core.Tools.ReturnCodeFiles(Microsoft.CodeAnalysis.Project)
   nameWithType: Tools.ReturnCodeFiles(Project)
 - uid: LineNumbers.Core.Tools.ReturnCodeFiles*
   name: ReturnCodeFiles
@@ -129,18 +138,21 @@ references:
   isSpec: "True"
   fullName: LineNumbers.Core.Tools.ReturnCodeFiles
   nameWithType: Tools.ReturnCodeFiles
-- uid: LineNumbers.Core.Tools.ReturnProjects(Solution)
+- uid: LineNumbers.Core.Tools.ReturnProjects(Microsoft.CodeAnalysis.Solution)
   name: ReturnProjects(Solution)
-  href: api/LineNumbers.Core.Tools.html#LineNumbers_Core_Tools_ReturnProjects_Solution_
-  commentId: M:LineNumbers.Core.Tools.ReturnProjects(Solution)
-  fullName: LineNumbers.Core.Tools.ReturnProjects(Solution)
+  href: api/LineNumbers.Core.Tools.html#LineNumbers_Core_Tools_ReturnProjects_Microsoft_CodeAnalysis_Solution_
+  commentId: M:LineNumbers.Core.Tools.ReturnProjects(Microsoft.CodeAnalysis.Solution)
+  fullName: LineNumbers.Core.Tools.ReturnProjects(Microsoft.CodeAnalysis.Solution)
   nameWithType: Tools.ReturnProjects(Solution)
-- uid: LineNumbers.Core.Tools.ReturnProjects(System.String,MSBuildWorkspace)
-  name: ReturnProjects(String, MSBuildWorkspace)
-  href: api/LineNumbers.Core.Tools.html#LineNumbers_Core_Tools_ReturnProjects_System_String_MSBuildWorkspace_
-  commentId: M:LineNumbers.Core.Tools.ReturnProjects(System.String,MSBuildWorkspace)
-  fullName: LineNumbers.Core.Tools.ReturnProjects(System.String, MSBuildWorkspace)
-  nameWithType: Tools.ReturnProjects(String, MSBuildWorkspace)
+- uid: LineNumbers.Core.Tools.ReturnProjects(System.String,Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace)
+  name: ReturnProjects(string, MSBuildWorkspace)
+  href: api/LineNumbers.Core.Tools.html#LineNumbers_Core_Tools_ReturnProjects_System_String_Microsoft_CodeAnalysis_MSBuild_MSBuildWorkspace_
+  commentId: M:LineNumbers.Core.Tools.ReturnProjects(System.String,Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace)
+  name.vb: ReturnProjects(String, MSBuildWorkspace)
+  fullName: LineNumbers.Core.Tools.ReturnProjects(string, Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace)
+  fullName.vb: LineNumbers.Core.Tools.ReturnProjects(String, Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace)
+  nameWithType: Tools.ReturnProjects(string, MSBuildWorkspace)
+  nameWithType.vb: Tools.ReturnProjects(String, MSBuildWorkspace)
 - uid: LineNumbers.Core.Tools.ReturnProjects*
   name: ReturnProjects
   href: api/LineNumbers.Core.Tools.html#LineNumbers_Core_Tools_ReturnProjects_

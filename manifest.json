@@ -12,19 +12,16 @@
         "resource": {
           "relative_path": "index.json"
         }
-      },
-      "is_incremental": false
+      }
     },
     {
       "type": "ManagedReference",
       "source_relative_path": "api/LineNumbers.Core.LinesInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LineNumbers.Core.LinesInfo.html",
-          "hash": "Wt2yF2DsaiTbSdyIEmm6zeeufDrkjb90Os2fZyl0iiY="
+          "relative_path": "api/LineNumbers.Core.LinesInfo.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -32,11 +29,9 @@
       "source_relative_path": "api/LineNumbers.Core.Tools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LineNumbers.Core.Tools.html",
-          "hash": "xIZM3eNUbY+pl1bW4qwcuCw9ZmLqfXN2vBVOpJaA4Xk="
+          "relative_path": "api/LineNumbers.Core.Tools.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -44,11 +39,9 @@
       "source_relative_path": "api/LineNumbers.Core.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LineNumbers.Core.html",
-          "hash": "jF0He1Sr0GbMl+5bGdPDo3Yrpc6IfahYzFW5fYzKQ18="
+          "relative_path": "api/LineNumbers.Core.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -56,11 +49,9 @@
       "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "+Zg5ViDTUPJRaryjqXQ6iXiXM3Dh+Raf07V0b1GchZw="
+          "relative_path": "api/toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -68,11 +59,9 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "DvCFHTaCtIwcSZVGnL0unka+GAUlzqjY/g3QIQl8ROg="
+          "relative_path": "index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -80,55 +69,10 @@
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "bpLFgnEQ/hwYmvl+l2WPF/4wN23sViOOZFW/AewTNb4="
+          "relative_path": "toc.html"
         }
       },
-      "is_incremental": false,
       "version": ""
-    }
-  ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
-      },
-      "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 1,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
     }
   ],
   "version_info": {},
