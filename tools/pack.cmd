@@ -9,7 +9,6 @@ echo Packing binary...
 "%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%version%-bin.rar "..\LineNumbers.Core\bin\%releaseconfig%\net6.0\"
 "%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%version%-demo.rar "..\LineNumbers\bin\%releaseconfig%\net6.0\"
 "%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%version%-bin48.rar "..\LineNumbers.Core\bin\%releaseconfig%\net48\"
-"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%version%-demo48.rar "..\LineNumbers\bin\%releaseconfig%\net48\"
 if %errorlevel% == 0 goto :complete
 echo There was an error trying to pack binary (%errorlevel%).
 goto :finished
@@ -18,7 +17,6 @@ goto :finished
 move %temp%\%version%-bin.rar
 move %temp%\%version%-demo.rar
 move %temp%\%version%-bin48.rar
-move %temp%\%version%-demo48.rar
 
 echo Pack successful.
 :finished

@@ -19,7 +19,6 @@ echo Packing binary...
 "$rarpath" a -ep1 -r -m5 /tmp/$version-bin.rar "../LineNumbers.Core/bin/$releaseconf/net6.0/"
 "$rarpath" a -ep1 -r -m5 /tmp/$version-demo.rar "../LineNumbers/bin/$releaseconf/net6.0/"
 "$rarpath" a -ep1 -r -m5 /tmp/$version-bin48.rar "../LineNumbers.Core/bin/$releaseconf/net48/"
-"$rarpath" a -ep1 -r -m5 /tmp/$version-demo48.rar "../LineNumbers/bin/$releaseconf/net48/"
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
 	exit 1
@@ -29,6 +28,5 @@ fi
 mv ~/tmp/$version-bin.rar .
 mv ~/tmp/$version-demo.rar .
 mv ~/tmp/$version-bin48.rar .
-mv ~/tmp/$version-demo48.rar .
 echo Build and pack successful.
 exit 0
