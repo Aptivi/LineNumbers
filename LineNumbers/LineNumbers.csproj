@@ -9,12 +9,14 @@
     <Description>Gets total line numbers from Visual Basic and C# projects</Description>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageIcon>OfficialAppIcon-LineNumbers-512.png</PackageIcon>
     <PackageIconUrl />
     <ApplicationIcon>OfficialAppIcon-LineNumbers.ico</ApplicationIcon>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
     <LangVersion>latest</LangVersion>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
