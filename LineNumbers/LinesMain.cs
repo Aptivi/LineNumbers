@@ -23,6 +23,7 @@
 // SOFTWARE.
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using LineNumbers.Core;
 
@@ -37,9 +38,9 @@ namespace LineNumbers
             if (args.Length > 0)
             {
                 // Check to see if solution exists
-                if (File.Exists(args[0]))
+                if (File.Exists(Path.GetFullPath(args[0])))
                 {
-                    var LinesInfo = new LinesInfo(args[0]);
+                    var LinesInfo = new LinesInfo(Path.GetFullPath(args[0]));
                     var LineNumbers = LinesInfo.LineNumbersByProject;
 
                     // Enumerate through each project

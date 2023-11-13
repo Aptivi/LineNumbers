@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LineNumbers": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../LineNumbers.sln"
+    }
+  }
+}
