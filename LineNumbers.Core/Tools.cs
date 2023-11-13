@@ -31,7 +31,9 @@ using Microsoft.CodeAnalysis.MSBuild;
 
 namespace LineNumbers.Core
 {
-
+    /// <summary>
+    /// Line number tools
+    /// </summary>
     public static class Tools
     {
 
@@ -39,6 +41,7 @@ namespace LineNumbers.Core
         /// Get the projects in the solution
         /// </summary>
         /// <param name="Solution">The solution file name</param>
+        /// <param name="Workspace">MSBuild workspace</param>
         public static List<Project> ReturnProjects(string Solution, MSBuildWorkspace Workspace)
         {
             if (File.Exists(Solution))

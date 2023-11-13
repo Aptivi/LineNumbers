@@ -29,7 +29,9 @@ using Microsoft.CodeAnalysis.MSBuild;
 
 namespace LineNumbers.Core
 {
-
+    /// <summary>
+    /// Number of lines information
+    /// </summary>
     public class LinesInfo
     {
 
