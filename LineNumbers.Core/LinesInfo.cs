@@ -22,6 +22,7 @@
 // SOFTWARE.
 
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using Microsoft.CodeAnalysis;
@@ -38,7 +39,7 @@ namespace LineNumbers.Core
         /// <summary>
         /// The line numbers by project
         /// </summary>
-        public Dictionary<string, long> LineNumbersByProject { get; private set; }
+        public ReadOnlyDictionary<string, long> LineNumbersByProject { get; private set; }
 
         /// <summary>
         /// The line number of the whole solution
@@ -48,30 +49,30 @@ namespace LineNumbers.Core
         /// <summary>
         /// Paths to the individual code files
         /// </summary>
-        public List<string> CodeFiles { get; private set; }
+        public string[] CodeFiles { get; private set; }
 
         /// <summary>
         /// Paths to the individual code files by project
         /// </summary>
-        public Dictionary<string, List<string>> CodeFilesByProject { get; private set; }
+        public ReadOnlyDictionary<string, string[]> CodeFilesByProject { get; private set; }
 
         /// <summary>
         /// Line numbers of individual code files
         /// </summary>
-        public Dictionary<string, long> LineNumbersByCodeFiles { get; private set; }
+        public ReadOnlyDictionary<string, long> LineNumbersByCodeFiles { get; private set; }
 
         /// <summary>
         /// Line numbers of individual code files by project
         /// </summary>
-        public Dictionary<string, Dictionary<string, long>> LineNumbersByCodeFilesByProject { get; private set; }
+        public ReadOnlyDictionary<string, ReadOnlyDictionary<string, long>> LineNumbersByCodeFilesByProject { get; private set; }
 
         /// <summary>
         /// Creates a new lines information instance from the Visual Studio solution
         /// </summary>
         /// <param name="SolutionPath">Path to the Visual Studio solution</param>
-        public LinesInfo(string SolutionPath) : this(MSBuildWorkspace.Create().OpenSolutionAsync(SolutionPath).Result)
-        {
-        }
+        public LinesInfo(string SolutionPath) :
+            this(MSBuildWorkspace.Create().OpenSolutionAsync(SolutionPath).Result)
+        { }
 
         /// <summary>
         /// Creates a new lines information instance from the Visual Studio solution
@@ -82,9 +83,9 @@ namespace LineNumbers.Core
             var Projects = Tools.ReturnProjects(Solution);
             var LineNumbersByProject = new Dictionary<string, long>();
             var CodeFiles = new List<string>();
-            var CodeFilesByProject = new Dictionary<string, List<string>>();
+            var CodeFilesByProject = new Dictionary<string, string[]>();
             var LineNumbersByCodeFiles = new Dictionary<string, long>();
-            var LineNumbersByCodeFilesByProject = new Dictionary<string, Dictionary<string, long>>();
+            var LineNumbersByCodeFilesByProject = new Dictionary<string, ReadOnlyDictionary<string, long>>();
             var Total = default(long);
 
             // Enumerate through each project
@@ -111,18 +112,18 @@ namespace LineNumbers.Core
                 CodeFiles.AddRange(ProjectCodeFiles);
                 CodeFilesByProject.Add(Project.Name, ProjectCodeFiles);
                 LineNumbersByProject.Add(Project.Name, ProjectTotal);
-                LineNumbersByCodeFilesByProject.Add(Project.Name, LineNumbersByCodeFilesOfProject);
+                LineNumbersByCodeFilesByProject.Add(Project.Name, new ReadOnlyDictionary<string, long>(LineNumbersByCodeFilesOfProject));
 
                 // Reset some values
                 ProjectTotal = 0L;
             }
 
             // Install all the values to the new instance
-            this.LineNumbersByProject = LineNumbersByProject;
-            this.CodeFilesByProject = CodeFilesByProject;
-            this.CodeFiles = CodeFiles;
-            this.LineNumbersByCodeFiles = LineNumbersByCodeFiles;
-            this.LineNumbersByCodeFilesByProject = LineNumbersByCodeFilesByProject;
+            this.LineNumbersByProject = new ReadOnlyDictionary<string, long>(LineNumbersByProject);
+            this.CodeFilesByProject = new ReadOnlyDictionary<string, string[]>(CodeFilesByProject);
+            this.CodeFiles = CodeFiles.ToArray();
+            this.LineNumbersByCodeFiles = new ReadOnlyDictionary<string, long>(LineNumbersByCodeFiles);
+            this.LineNumbersByCodeFilesByProject = new ReadOnlyDictionary<string, ReadOnlyDictionary<string, long>>(LineNumbersByCodeFilesByProject);
             SolutionLineNumber = Total;
         }
 

@@ -42,12 +42,12 @@ namespace LineNumbers.Core
         /// </summary>
         /// <param name="Solution">The solution file name</param>
         /// <param name="Workspace">MSBuild workspace</param>
-        public static List<Project> ReturnProjects(string Solution, MSBuildWorkspace Workspace)
+        public static Project[] ReturnProjects(string Solution, MSBuildWorkspace Workspace)
         {
             if (File.Exists(Solution))
             {
                 var SolutionInstance = Workspace.OpenSolutionAsync(Solution).Result;
-                return SolutionInstance.Projects.ToList();
+                return SolutionInstance.Projects.ToArray();
             }
             else
             {
@@ -59,16 +59,16 @@ namespace LineNumbers.Core
         /// Get the projects in the solution
         /// </summary>
         /// <param name="Solution">The solution</param>
-        public static List<Project> ReturnProjects(Solution Solution)
+        public static Project[] ReturnProjects(Solution Solution)
         {
-            return Solution.Projects.ToList();
+            return Solution.Projects.ToArray();
         }
 
         /// <summary>
         /// Returns the code files that are in the project
         /// </summary>
         /// <param name="ProjectSolution">The project in solution</param>
-        public static List<string> ReturnCodeFiles(Project ProjectSolution)
+        public static string[] ReturnCodeFiles(Project ProjectSolution)
         {
             if (File.Exists(ProjectSolution.FilePath) & ProjectSolution.SupportsCompilation)
             {
@@ -108,7 +108,7 @@ namespace LineNumbers.Core
 
                 // Return the list
                 ToParse.Sort();
-                return ToParse;
+                return ToParse.ToArray();
             }
             else
             {
