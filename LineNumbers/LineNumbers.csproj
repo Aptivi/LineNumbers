@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <RootNamespace>LineNumbers</RootNamespace>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Authors>Aptivi</Authors>
     <Company>Aptivi</Company>
     <Description>Gets total line numbers from Visual Basic and C# projects</Description>
