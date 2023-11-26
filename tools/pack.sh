@@ -16,8 +16,8 @@ fi
 
 # Pack binary
 echo Packing binary...
-cd "../LineNumbers.Core/bin/$releaseconf/net6.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
-cd "../LineNumbers/bin/$releaseconf/net6.0/" && "$zippath" -r /tmp/$version-demo.zip . && cd -
+cd "../LineNumbers.Core/bin/$releaseconf/net8.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
+cd "../LineNumbers/bin/$releaseconf/net8.0/" && "$zippath" -r /tmp/$version-demo.zip . && cd -
 cd "../LineNumbers.Core/bin/$releaseconf/net48/" && "$zippath" -r /tmp/$version-bin48.zip . && cd -
 if [ ! $? == 0 ]; then
 	echo Packing using zip failed.
