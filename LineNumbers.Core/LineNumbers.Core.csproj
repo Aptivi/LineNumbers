@@ -7,7 +7,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <IncludeSymbols>True</IncludeSymbols>
-    <Version>0.99.1</Version>
+    <Version>0.99.2</Version>
     <Authors>Aptivi</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright (c) 2021 - 2022 Aptivi.</Copyright>
@@ -18,7 +18,7 @@
     <Description>Gets the line numbers of a solution file</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>OfficialAppIcon-LineNumbers-512.png</PackageIcon>
-    <PackageVersion>0.99.1</PackageVersion>
+    <PackageVersion>0.99.2</PackageVersion>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
     <LangVersion>latest</LangVersion>
     <SignAssembly>True</SignAssembly>
