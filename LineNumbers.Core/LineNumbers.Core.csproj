@@ -7,6 +7,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Version>0.99.3</Version>
     <Authors>Aptivi</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
